@@ -1,6 +1,7 @@
 body {
     background-color: rgb(107, 124, 124);
 }
+
 .border {
     width:1564px;
     height:960px;
@@ -54,4 +55,7 @@ h1 {
     top: 89px;
     left: 1497px;
     font-size: 40px;
+}
+#buttonsPanel{
+  background-color: greenyellow
 }
