@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(107, 124, 124);
+}
+.border {
+    width:1564px;
+    height:960px;
+    background: #c1d4d0;
+    margin-left: 120px;
+    margin-top: -70px;
+}
+h1 {
+    position: relative;
+    display: flex;
+    margin-left: 825px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow',
+}
+.border2 {
+    width:1300px;
+    height:650px;
+    background: #a7adae;
+    margin-left: 250px;
+    margin-top: -725px;
+}
+#icon-medicina {
+    position: relative;
+    display: flex;
+    margin-top: -900px;
+    margin-left: 1515px;
+    width: 150px; 
+    height: 141px;
+}
+#icon-account {
+    position: relative;
+    display: flex;
+    margin-top: -140px;
+    margin-left: 140px;
+    width: 110px; 
+    height: 110px;
+}
+#search {
+    text-align: center;
+    position: relative;
+    width: 1247px;
+    height: 50px;
+    top: -750px;
+    left: 250px;
+    font-size: 20px;
+}
+#pogaFiltr{
+    position: relative;
+    display: flex;
+    width: 53px;
+    height: 50px; 
+    top: 89px;
+    left: 1497px;
+    font-size: 40px;
+}
