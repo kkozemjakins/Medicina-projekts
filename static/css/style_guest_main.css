@@ -56,6 +56,19 @@ h1 {
     left: 1497px;
     font-size: 40px;
 }
-#buttonsPanel{
-  background-color: greenyellow
+li {
+    position: relative;
+    size: 30px;
+    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
+    border-bottom: 1px solid grey;
+    color: #506a6b;
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+    margin-bottom: 5px;
+    text-align: center;
+    list-style-type: none;
+    width: 200px;
+    float: left;
+    left: 220px;
+    top: -20px;
 }
