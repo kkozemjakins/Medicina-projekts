@@ -1,6 +1,13 @@
 from flask import Flask, render_template
 app = Flask('app')
 
+@app.route('/')
+def sakum_login():
+  return render_template("login.html")
+
+@app.route('/login')
+def login():
+  return render_template("login.html")
 
 @app.route('/')
 def index():
@@ -13,6 +20,12 @@ def guest_visits():
 @app.route('/guest_main')
 def guest_main():
   return render_template("guest_main.html")
+
+@app.route('/admin_main')
+def admin_main():
+  return render_template("admin_main.html")
+
+
 
 
 

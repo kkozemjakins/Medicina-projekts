@@ -52,7 +52,7 @@ h1 {
     display: flex;
     width: 53px;
     height: 50px; 
-    top: 89px;
+    top: 60px;
     left: 1497px;
     font-size: 40px;
 }
@@ -70,5 +70,5 @@ li {
     width: 200px;
     float: left;
     left: 220px;
-    top: -20px;
+    top: -60px;
 }

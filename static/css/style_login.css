@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(107, 124, 124);
+}
+
+#login_div{
+    width: 721px;
+    height: 922px;
+    background-color: #b9d9e3;
+    text-align: center;
+    border-radius: 50px;
+    border-width: medium;
+    border-style: solid;
+    margin: 0 auto; 
+};
+
+#login_icon{
+    width: 133px;
+    height: 136px;
+};
+
+.button {
+    
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
