@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.py": [
+      {
+        "id": "9ebcb910-d833-489a-b473-0108cc93345e",
+        "line": 32,
+        "version": 154,
+        "index": 561
+      }
+    ],
+    "static/js/script.js": [
+      {
+        "id": "a8f5114c-9d70-4e1a-b31f-2e50d06d5476",
+        "line": 1,
+        "version": 1,
+        "index": 0
+      }
+    ]
+  }
+}

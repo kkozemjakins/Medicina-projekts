@@ -87,3 +87,43 @@ h1 {
     background-color: seashell;
 }
 
+#vizītuIevade {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    border: 3px solid black;
+    background-color: rgb(255, 237, 138);
+    height: 50px;
+    width: 1880px;
+    margin-top: 50px;
+    margin-left: -15px;
+}
+
+.vizite {
+    display: flex;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 50px;
+    width: 400px;
+    margin: 15px;
+    background-color: rgb(205, 255, 154);
+    word-spacing: -2px;
+}
+
+#saraksts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.del{
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(253, 255, 148);
+    height: 40px;
+    width: 60px;
+    padding: 10px;
+}
+
