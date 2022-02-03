@@ -1,54 +1,53 @@
-let vizites = []
+let vizit = [];
 
 window.addEventListener('load', () => {
-    preces = JSON.parse(localStorage.getItem("vizites") || "[]");
-    console.log(vizites)
+    vizit = JSON.parse(localStorage.getItem("vizit") || "[]");
+    console.log(vizit)
     render();
 });
 
-document.getElementById("pievienotViziti").addEventListener('click', Poga)
-function Poga(){
-    if (datums.value === ""){
-        alert("Jūs neievadijāt vizītes datumu.")
-    };
-    if (laiks.value === ""){
-        alert("Jūs neievadijāt vizītes laiku.")
-    } else {
-        let vizite = {datums: datums.value, laiks: laiks.value};
-        datums.value = "";
-        laiks.value = "";
-    
-        vizites.push(vizite);
+document.getElementById('pievienotViziti').addEventListener('click', () => {
+    POP_UP.style.display = 'none';
 
-        render();
-    }
+    let spisokVizitov = {datums: datums.value, laiks: laiks.value};
 
-}
+    datums.value = "";
+    laiks.value = "";
+
+    vizit.push(spisokVizitov);
+
+    render();
+})
 
 function render() {
-    let saraksts = document.getElementById('saraksts');
-    saraksts.innerHTML = "";
+    let biblioteka = document.getElementById('biblioteka');
+    biblioteka.innerHTML = "";
 
-    for(let i = 0; i < vizites.length; i++) {
+    for(let i = 0; i < vizit.length; i++) {
+        let spisokVizitov = `
+        <div class="pisokVizitov">
+            <h3>Datums: ${vizit[i].datums}</h3>
+            <h4>Laiks: ${vizit[i].laiks}</h4>
+            <button onclick='removeBook("${vizit[i].datums}")'>Dzēst</button>
+        </div>`;
 
-        let vizite = `
-    <li class="vizite">
-        <h3>Vizīte: ${vizites[i].datums}</h3>⠀⠀⠀<h4>Laiks: ${vizites[i].laiks}</h4>⠀⠀⠀⠀
-        <button class="del">Dzēst</button>
-    </li>`;
-    saraksts.innerHTML += vizite;
+        biblioteka.innerHTML += spisokVizitov;
     }
 
-    localStorage.setItem("vizites", JSON.stringify(vizites)) 
+    localStorage.setItem("vizit", JSON.stringify(vizit))
 }
 
-const list = document.querySelector('#saraksts')
 
-list.addEventListener('click', (e) => {
-    if(e.target.className == 'del'){
-      const li = e.target.parentElement;
-      li.parentNode.removeChild(li);
-      vizites.splice(li, 1);
-      localStorage.setItem('vizites',JSON.stringify(vizites));
+function removeBook(spisokVizitov){
+    for(let i = 0; i < vizit.length; i++) {
+        if( === vizit[i].virsraksts){
+            delete vizit)[i];
+            break;
+        }
     }
-  });
+
+    vizit = vizit.filter(function (e) {return e != null;});
+
+    localStorage.setItem("vizit", JSON.stringify(vizit))
+    render();
+}

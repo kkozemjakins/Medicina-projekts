@@ -88,13 +88,13 @@ h1 {
 }
 
 #vizītuIevade {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    align-items: center;
     font-size: 30px;
     border: 3px solid black;
-    background-color: rgb(255, 237, 138);
+    background-color: green;
     height: 50px;
-    width: 1880px;
+    width: 700px;
     margin-top: 50px;
     margin-left: -15px;
 }
