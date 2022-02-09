@@ -102,14 +102,16 @@ h1 {
 .vizite {
     display: flex;
     align-items: center;
-    border: 5px solid black;
-    border-radius: 10px;
+    border: 2px solid black;
+    border-radius: 2px;
     padding: 10px;
     height: 50px;
     width: 400px;
     margin: 15px;
     background-color: rgb(205, 255, 154);
     word-spacing: -2px;
+
+    margin-top: 20px;
 }
 
 #saraksts{
@@ -129,5 +131,12 @@ h1 {
 
 #ManasVizites{
   display: flex;
-  margin-left: 5px;
+  margin-left: 200px;
+  margin-top:10px;
+}
+
+#h2VIZITI{
+  display: flex;
+  margin-left: 200px;
+  margin-top:10px;
 }
