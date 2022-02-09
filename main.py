@@ -25,6 +25,14 @@ def guest_main():
 def admin_main():
   return render_template("admin_main.html")
 
+@app.route('/admin_doctor_page')
+def admin_doctor_page():
+  return render_template("admin_doctor_page.html")
+
+@app.route('/admin_hospital_page')
+def admin_hospital_page():
+  return render_template("admin_hospital_page.html")
+
 
 
 

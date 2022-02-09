@@ -38,24 +38,7 @@ h1 {
     width: 110px; 
     height: 110px;
 }
-#search {
-    text-align: center;
-    position: relative;
-    width: 1247px;
-    height: 50px;
-    top: -750px;
-    left: 250px;
-    font-size: 20px;
-}
-#pogaFiltr{
-    position: relative;
-    display: flex;
-    width: 53px;
-    height: 50px; 
-    top: 60px;
-    left: 1497px;
-    font-size: 40px;
-}
+
 li {
     position: relative;
     size: 30px;
@@ -72,4 +55,3 @@ li {
     left: 220px;
     top: -60px;
 }
-

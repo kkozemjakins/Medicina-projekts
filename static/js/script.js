@@ -1,53 +1,58 @@
-let vizit = [];
+let vizites = []
 
 window.addEventListener('load', () => {
-    vizit = JSON.parse(localStorage.getItem("vizit") || "[]");
-    console.log(vizit)
+    vizites = JSON.parse(localStorage.getItem("vizites") || "[]");
+    console.log(vizites)
     render();
 });
 
-document.getElementById('pievienotViziti').addEventListener('click', () => {
-    POP_UP.style.display = 'none';
+document.getElementById("pievienotViziti").addEventListener('click', Poga)
+function Poga(){
+    if (datums.value === ""){
+        alert("Jūs neievadijāt vizītes datumu.")
+    };
+    if (laiks.value === ""){
+        alert("Jūs neievadijāt vizītes laiku.")
+    } else {
+        let vizite = {datums: datums.value, laiks: laiks.value};
+        datums.value = "";
+        laiks.value = "";
+    
+        vizites.push(vizite);
 
-    let spisokVizitov = {datums: datums.value, laiks: laiks.value};
+        render();
+    }
 
-    datums.value = "";
-    laiks.value = "";
-
-    vizit.push(spisokVizitov);
-
-    render();
-})
+}
 
 function render() {
-    let biblioteka = document.getElementById('biblioteka');
-    biblioteka.innerHTML = "";
+    let saraksts = document.getElementById('saraksts');
+    saraksts.innerHTML = "";
 
-    for(let i = 0; i < vizit.length; i++) {
-        let spisokVizitov = `
-        <div class="pisokVizitov">
-            <h3>Datums: ${vizit[i].datums}</h3>
-            <h4>Laiks: ${vizit[i].laiks}</h4>
-            <button onclick='removeBook("${vizit[i].datums}")'>Dzēst</button>
-        </div>`;
+    for(let i = 0; i < vizites.length; i++) {
 
-        biblioteka.innerHTML += spisokVizitov;
+        let vizite = `
+    <li class="vizite">
+        <h3>Vizīte: ${vizites[i].datums}</h3>⠀⠀⠀<h4>Laiks: ${vizites[i].laiks}</h4>⠀⠀⠀⠀
+        <button class="del">Dzēst</button>
+    </li>`;
+    saraksts.innerHTML += vizite;
     }
 
-    localStorage.setItem("vizit", JSON.stringify(vizit))
+    if(!localStorage.getItem('vizites')){
+      localStorage.setItem('vizites', JSON.stringify($scope.vizites));
+    } 
 }
 
+const list = document.querySelector('#saraksts')
 
-function removeBook(spisokVizitov){
-    for(let i = 0; i < vizit.length; i++) {
-        if( === vizit[i].virsraksts){
-            delete vizit)[i];
-            break;
-        }
+list.addEventListener('click', (e) => {
+    if(e.target.className == 'del'){
+      const li = e.target.parentElement;
+      li.parentNode.removeChild(li);
+      vizites.splice(li, 1);
+      if(!localStorage.getItem('vizites')){
+        localStorage.setItem('vizites', JSON.stringify($scope.vizites));
+      }
     }
-
-    vizit = vizit.filter(function (e) {return e != null;});
-
-    localStorage.setItem("vizit", JSON.stringify(vizit))
-    render();
-}
+  });

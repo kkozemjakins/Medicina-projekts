@@ -127,3 +127,7 @@ h1 {
     padding: 10px;
 }
 
+#ManasVizites{
+  display: flex;
+  margin-left: 5px;
+}

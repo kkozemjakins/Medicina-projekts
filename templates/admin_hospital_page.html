@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <h1>Medicīna</h1>
-    <link rel="stylesheet" href="static/css/style_admin_main.css"></link>
+    <link rel="stylesheet" href="static/css/admin_hospital_page.css"></link>
     <style type="text/css">
       BODY {
         background: url(https://cdn.discordapp.com/attachments/910278586114637844/940893915412836432/7500-hospital-drive-dublin-header.jpg);
@@ -24,12 +24,35 @@
 
     
     <p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding:.7em 1.5em;outline: none;"><a href="./login">Iziet</a></p>
+
+    <ul id="buttonsPanel4">
+      <li style="position: relative;
+    size: 30px;
+    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
+    border-bottom: 1px solid grey;
+    color: #506a6b;
+    font-size: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+    margin-bottom: 5px;
+    text-align: center;
+    list-style-type: none;
+    width: 200px;
+    float: left;
+    left: 220px;
+    top: 70px;"><a href="./admin_main">Atpakaļ</a></li>
+
+    <h1>Pievienot slimnīcu.</h1>
+    <div id="Slimnicas">
+      <input type="text" id="nosaukums" placeholder="Nosaukums">
+      <input type="text" id="adrese" placeholder="Adrese">
+      <button type="Pievienot" id="pievienotSlimnicu">Pievienot</button>
+    </div>
+    <div id="saraksts">
     
-   
+    </div>
 
-    <h2><a href="./admin_hospital_page"><button class="button1" style="font-size: 30px;margin-top: 15%;height: 90px;width: 500px;margin-left: 36%">Labot informāciju par slimnīcām.</button></a></h2>
-
-      <h3><a href="./admin_doctor_page"><button class="button2" style="font-size: 30px;margin-top: 10%;height: 90px;width: 500px;margin-left: 36%"> Labot informāciju par ārstiem. </button></a></h3>
+    <script src="static/js/admin_hospital_page.js"></script>
+    
     
 </body>
 </html>
