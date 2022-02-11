@@ -2,6 +2,37 @@ body {
     background-color: rgb(107, 124, 124);
 }
 
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
+
 .border {
     width:1564px;
     height:960px;
@@ -20,7 +51,7 @@ h1 {
     height:650px;
     background: #a7adae;
     margin-left: 250px;
-    margin-top: -725px;
+    margin-top: -700px;
 }
 #icon-medicina {
     position: relative;
@@ -39,19 +70,3 @@ h1 {
     height: 110px;
 }
 
-li {
-    position: relative;
-    size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
-    font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-    margin-bottom: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 200px;
-    float: left;
-    left: 220px;
-    top: -60px;
-}

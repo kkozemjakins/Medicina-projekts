@@ -20,12 +20,12 @@ h1 {
     height:650px;
     background: #a7adae;
     margin-left: 250px;
-    margin-top: 500px;
+    margin-top: -700px;
 }
 #icon-medicina {
     position: relative;
     display: flex;
-    margin-top: 500px;
+    margin-top: -900px;
     margin-left: 1515px;
     width: 150px; 
     height: 141px;
@@ -33,70 +33,14 @@ h1 {
 #icon-account {
     position: relative;
     display: flex;
-    margin-top: 500px;
+    margin-top: -140px;
     margin-left: 140px;
     width: 110px; 
     height: 110px;
 }
 
-li {
-    position: relative;
-    size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
-    font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-    margin-bottom: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 200px;
-    float: left;
-    left: 220px;
-    top: -60px;
-}
-
-#pievienotSlimnici {
-    text-align: center;
-    align-items: center;
-    font-size: 30px;
-    border: 3px solid black;
-    background-color: green;
-    height: 50px;
-    width: 700px;
-    margin-top: 50px;
-    margin-left: -15px;
-}
-
-.slimnica {
-    display: flex;
-    align-items: center;
-    border: 5px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    height: 50px;
-    width: 400px;
-    margin: 15px;
-    background-color: rgb(205, 255, 154);
-    word-spacing: -2px;
-}
-
-#saraksts{
+#saraksts2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.del{
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: rgb(253, 255, 148);
-    height: 40px;
-    width: 60px;
-    padding: 10px;
-}
-
-#Slimnicas{
-  display: flex;
-  margin-left: 5px;
-}
+};

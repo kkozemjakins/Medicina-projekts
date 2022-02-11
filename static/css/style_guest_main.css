@@ -9,12 +9,7 @@ body {
     margin-left: 120px;
     margin-top: -70px;
 }
-h1 {
-    position: relative;
-    display: flex;
-    margin-left: 825px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow',
-}
+
 .border2 {
     width:1300px;
     height:650px;
@@ -25,7 +20,7 @@ h1 {
 #icon-medicina {
     position: relative;
     display: flex;
-    margin-top: -900px;
+    margin-top: -950px;
     margin-left: 1515px;
     width: 150px; 
     height: 141px;
@@ -72,4 +67,3 @@ li {
     left: 220px;
     top: -60px;
 }
-

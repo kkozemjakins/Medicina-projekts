@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     render();
 });
 
-document.getElementById("pievienotSlimnici").addEventListener('click', Poga)
+document.getElementById("pievienotSlimnici").addEventListener('click', Poga);
 function Poga(){
     if (nosaukums.value === ""){
         alert("Jūs neievadijāt slimnīcas nosaukumu.")
@@ -14,9 +14,9 @@ function Poga(){
     if (adrese.value === ""){
         alert("Jūs neievadijāt slimnīcas adresi.")
     } else {
-        let slimnica = {nosaukums: nosaukums.value, adrese: adrese.value};
+        let slimnica = {nosaukums: nosaukums.value, adrese: drese.value};
         nosaukums.value = "";
-        adrese.value = "";
+        drese.value = "";
     
         slimnicas.push(slimnica);
 
@@ -26,8 +26,8 @@ function Poga(){
 }
 
 function render() {
-    let saraksts = document.getElementById('saraksts');
-    saraksts.innerHTML = "";
+    let saraksts2 = document.getElementById('saraksts2');
+    saraksts2.innerHTML = "";
 
     for(let i = 0; i < slimnicas.length; i++) {
 
@@ -36,7 +36,7 @@ function render() {
         <h3>Slimnīca: ${slimnicas[i].nosaukums}</h3>⠀⠀⠀<h4>Adrese: ${slimnicas[i].adrese}</h4>⠀⠀⠀⠀
         <button class="del">Dzēst</button>
     </li>`;
-    saraksts.innerHTML += slimnica;
+    saraksts2.innerHTML += slimnica;
     }
 
     if(!localStorage.getItem('slimnicas')){
@@ -44,7 +44,7 @@ function render() {
     } 
 }
 
-const list = document.querySelector('#saraksts')
+const list = document.querySelector('#saraksts2')
 
 list.addEventListener('click', (e) => {
     if(e.target.className == 'del'){
