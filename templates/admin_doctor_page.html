@@ -41,9 +41,9 @@
     </tr>
     {% for task in tasks %}
       <tr>
-        <td>{{ task.content }}</td>
-        <td>{{ task.title }}</td>
-        <td>{{ task.article }}</td>
+        <td>{{ task.content }}</td><!-- content = darbibas joma -->
+        <td>{{ task.title }}</td><!-- title = vards uzvards -->
+        <td>{{ task.article }}</td><!-- article = Darba laiks -->
         <td>
           <a href="/delete/{{task.id}}"><button class="button">Delete</button></a>
           <br>

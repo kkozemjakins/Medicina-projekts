@@ -3,15 +3,15 @@ console.log("boljnica vibor");
 var subjectObject = {
   "Imanta": {
     "VCA_POLIKLĪNIKA_ELITE": ["ALERGOLOĢIJA","ANESTEZIOLOĢIJA / REANIMATOLOĢIJA","PSIHIATRIJA"],
-    "Rīgas_veselības_centrs_filiāle_Imanta": ["Borders", "Backgrounds", "Float"]
+    "Rīgas_veselības_centrs_filiāle_Imanta": ["1", "2", "3"]
   },
-  "Back-end": {
-    "PHP": ["Variables", "Strings", "Arrays"],
-    "SQL": ["SELECT", "UPDATE", "DELETE"]
-  }
 }
 
-window.onload = function() {
+var getValue = document.getElementById('test_medicina').selectedOptions[0].value;
+
+alert ("Danik idi nahuj ok!!??"); // This will output the value selected.
+
+/* window.onload = function() {
   var subjectSel = document.getElementById("rajons");
   var topicSel = document.getElementById("slimnica");
   var chapterSel = document.getElementById("arsts");
@@ -36,4 +36,6 @@ window.onload = function() {
       chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
     }
   }
-}
+}*/
+
+

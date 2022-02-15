@@ -16,7 +16,7 @@
     <div class="border"> </div>
 
 
-    <form name="form1" id="form1" action="/action_page.php">
+    <!--<form name="form1" id="form1" action="/action_page.php">
       rajonss: <select name="rajons" id="rajons">
         <option value="" selected="selected">Select rajons</option>
       </select>
@@ -30,7 +30,32 @@
       </select>
       <br><br>
       <input type="submit" value="Submit">
-    </form> 
+    </form> -->
+
+    <form id = "form1">
+      <label for="cars">Choose a car:</label>
+      <select name="cars" id="cars">
+        <option value="1">Volvo</option>
+        <option value="2">Saab</option>
+        <option value="3">Opel</option>
+        <option value="4">Audi</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    {% for task in tasks %}
+      <tr>
+        <td>{{ task.content }}</td><!-- content = darbibas joma -->
+        <td>{{ task.title }}</td><!-- title = vards uzvards -->
+        <td>{{ task.article }}</td><!-- article = Darba laiks -->
+        <td>
+          <a href="/delete/{{task.id}}"><button class="button">Delete</button></a>
+          <br>
+          <a href="/update/{{task.id}}"><button class="button">Update</button></a>
+        </td>
+      </tr>
+    {% endfor %}
 
 
     <div class="border2"> </div>
