@@ -15,13 +15,7 @@ h1 {
     margin-left: 825px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow',
 }
-.border2 {
-    width:1300px;
-    height:650px;
-    background: #a7adae;
-    margin-left: 250px;
-    margin-top: -700px;
-}
+
 #icon-medicina {
     position: relative;
     display: flex;
@@ -39,8 +33,58 @@ h1 {
     height: 110px;
 }
 
-#saraksts2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-};
+
+table {
+    margin-left: 675px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #ECE9E0;
+    color: #656665;
+    border: 16px solid #ECE9E0;
+    border-radius: 20px;
+    }
+    th {
+    font-size: 18px;
+    padding: 10px;
+    }
+    td {
+    background: #F5D7BF;
+    padding: 10px;
+}
+
+.gradient-button {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+  }
+  .gradient-button:hover {
+    background-position: right center;
+  }
+    
+.button {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+.button:hover { background: rgb(53, 167, 110); }
+.button:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}

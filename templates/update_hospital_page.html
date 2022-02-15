@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Medicīna</h1>
+<link rel="stylesheet" href="../static/css/admin_doctor_page.css"></link>
+<style type="text/css">
+  BODY {
+    background: url(https://cdn.discordapp.com/attachments/910278586114637844/940893915412836432/7500-hospital-drive-dublin-header.jpg);
+  }
+</style>
+    
+<div class="border" > </div>
+
+
+</div>
+<img id="icon-medicina" src="https://cdn.discordapp.com/attachments/552129707227742228/844192612482416710/unknown.png" alt="icon-medicina" >
+<img id="icon-account"  src="https://cdn.discordapp.com/attachments/552129707227742228/844192853680062474/unknown.png" alt="icon-account" > 
+
+    
+<p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding.7em 1.5em;outline: none;"><a href="./login">Iziet</a></p>
+
+<ul id="buttonsPanel3">
+  <li style="position: relative;
+size: 30px;
+background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
+border-bottom: 1px solid grey;
+color: #506a6b;
+font-size: 20px;
+box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+margin-bottom: 5px;
+text-align: center;
+list-style-type: none;
+width: 200px;
+float: left;
+left: 220px;
+top: -70px;"><a href="./admin_main">Atpakaļ</a></li>
+
+<div class="content">
+  <h1 style="margin-left: 50px; margin-top: 150px;">Atjaunināt informāciju</h1>
+
+
+
+  <form action="/update2/{{task.id}}" method="POST">
+    <input type="text" name="nosaukums" id="nosaukums" value="{{task.nosaukums}}" placeholder="Nosaukums">
+    <input type="text" name="adrese" id="adrese" value="{{task.adrese}}" placeholder="Adrese">
+    <input type="submit" value="Update">
+  </form>
+</div>
+
+<script src="../static/js/admin_hospital_page.js"></script>
+    
+{% endblock %}

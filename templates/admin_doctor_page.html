@@ -24,46 +24,41 @@
 <p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding.7em 1.5em;outline: none;"><a href="./login">Iziet</a></p>
 
 <ul id="buttonsPanel3">
-  <li style="position: relative;
-size: 30px;
-background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-border-bottom: 1px solid grey;
-color: #506a6b;
-font-size: 20px;
-box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-margin-bottom: 5px;
-text-align: center;
-list-style-type: none;
-width: 200px;
-float: left;
-left: 220px;
-top: -70px;"><a href="./admin_main">Atpakaļ</a></li>
+  <a href="./admin_main" style="margin-top: 40px; margin-left: 220px;"><button class="button">Atpakaļ</button></a></li>
 
 <div class="content">
-  <h1 style="margin-left: 50px; margin-top: 150px;">Task Master</h1>
+  <h1 style="margin-left: 30px; margin-top: -20px;">Ārsti</h1>
+  {% if tasks|length < 1 %}
+  <h4 style="margin-left: 30px; margin-top: 0px;">Šeit nav pievienots ne viens ārsts.</h4>
+  {% else %}
 
   <table>
     <tr>
-      <th>Task</th>
-      <th>Added</th>
-      <th>Actions</th>
+      <th>Darbības joma</th>
+      <th>Vārds uzvārds</th>
+      <th>Darba laiks</th>
+      <th>Darbības</th>
     </tr>
     {% for task in tasks %}
       <tr>
         <td>{{ task.content }}</td>
-        <td>{{ task.date_created }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.article }}</td>
         <td>
-          <a href="/delete/{{task.id}}">Delete</a>
+          <a href="/delete/{{task.id}}"><button class="button">Delete</button></a>
           <br>
-          <a href="">Update</a>
+          <a href="/update/{{task.id}}"><button class="button">Update</button></a>
         </td>
       </tr>
     {% endfor %}
   </table>
+  {% endif %}
 
-  <form action="/" method="POST">
-    <input type="text" name="content" id="content">
-    <input type="submit" value="Add Task">
+  <form action="/ok" method="POST" id="form">
+        <input class="input" type="text" name="content" id="content" maxlength="30" placeholder="Darbības joma" required>
+        <input class="input" type="text" name="title" id="title" maxlength="30" placeholder="Vārds, Uzvārds" required>
+        <input class="input" type="text" name="article" id="article" maxlength="30" placeholder="Darba laiks" required>
+        <input type="submit" value="Pievienot" class="gradient-button">
   </form>
 </div>
 

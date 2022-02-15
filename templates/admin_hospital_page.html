@@ -15,7 +15,6 @@
 <body>
     
     <div class="border" > </div>
-    <div class="border2"> </div>
 
 
     </div>
@@ -41,14 +40,37 @@
     left: 220px;
     top: -50px;"><a href="./admin_main">Atpakaļ</a></li>
 
-    <h2 style=" margin-left: 755px; margin-top: 140px;">Pievienot slimnīcu</h2>
-    <div style=" margin-left: 650px; margin-top: 20px;" id="Slimnicas">
-      <input type="text" id="nosaukums" placeholder="Nosaukums">
-      <input type="text" id="adrese" placeholder="Adrese">
-      <button type="Pievienot" id="pievienotSlimnicu">Pievienot</button>
-    </div>
-    <div id="saraksts">
+    <div class="content2">
+      <h1 style="margin-left: 780px; margin-top: 150px;">Slimnīcas</h1>
+      {% if tasks2|length < 1 %}
+      <h4 style="margin-left: 720px; margin-top: 150px;">Šeit nav pievienota ne viena slimnīca.</h4>
+      {% else %}
     
+      <table>
+        <tr>
+          <th>Nosaukums</th>
+          <th>Adrese</th>
+          <th>Darbības</th>
+        </tr>
+        {% for task in tasks2 %}
+          <tr>
+            <td>{{ task.nosaukums }}</td>
+            <td>{{ task.adrese }}</td>
+            <td>
+              <a href="/delete2/{{task.id}}"><button class="button">Delete</button></a>
+              <br>
+              <a href="/update2/{{task.id}}"><button class="button">Update</button></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    
+      <form action="/ok2" method="POST" id="form">
+            <input class="input" type="text" name="nosaukums" id="nosaukums" maxlength="30" placeholder="Nosaukums" required style="margin-left: 675px;">
+            <input class="input" type="text" name="adrese" id="adrese" maxlength="30" placeholder="Adrese" required >
+            <input type="submit" value="Pievienot" class="gradient-button">
+      </form>
     </div>
 
     <script src="../static/js/admin_hospital_page.js"></script>
