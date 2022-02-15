@@ -25,25 +25,12 @@
     <p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding.7em 1.5em;outline: none;"><a href="./login">Iziet</a></p>
 
     <ul id="buttonsPanel4">
-      <li style="position: relative;
-    size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
-    font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-    margin-bottom: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 200px;
-    float: left;
-    left: 220px;
-    top: -50px;"><a href="./admin_main">Atpakaļ</a></li>
+      <a href="./admin_main" style="margin-top: 40px; margin-left: 220px;"><button class="button">Atpakaļ</button></a></li>
 
     <div class="content2">
       <h1 style="margin-left: 780px; margin-top: 150px;">Slimnīcas</h1>
       {% if tasks2|length < 1 %}
-      <h4 style="margin-left: 720px; margin-top: 150px;">Šeit nav pievienota ne viena slimnīca.</h4>
+            <h4 style="margin-left: 720px; margin-top: 150px;">Šeit nav pievienota ne viena slimnīca.</h4>
       {% else %}
     
       <table>

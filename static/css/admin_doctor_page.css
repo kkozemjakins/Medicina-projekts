@@ -123,3 +123,14 @@ table {
   background: rgb(33,147,90);
   box-shadow: 0 3px rgb(33,147,90) inset;
 }
+
+input {
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width:100%;
+  font-family:inherit;
+  font-size: inherit;
+  
+}

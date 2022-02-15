@@ -6,7 +6,7 @@
 
 {% block body %}
 <h1>Medicīna</h1>
-<link rel="stylesheet" href="../static/css/admin_doctor_page.css"></link>
+<link rel="stylesheet" href="../static/css/admin_hospital_page.css"></link>
 <style type="text/css">
   BODY {
     background: url(https://cdn.discordapp.com/attachments/910278586114637844/940893915412836432/7500-hospital-drive-dublin-header.jpg);
@@ -47,10 +47,9 @@ top: -70px;"><a href="./admin_main">Atpakaļ</a></li>
   <form action="/update2/{{task.id}}" method="POST">
     <input type="text" name="nosaukums" id="nosaukums" value="{{task.nosaukums}}" placeholder="Nosaukums">
     <input type="text" name="adrese" id="adrese" value="{{task.adrese}}" placeholder="Adrese">
-    <input type="submit" value="Update">
+    <input type="submit" value="Update" class="button">
   </form>
 </div>
 
-<script src="../static/js/admin_hospital_page.js"></script>
     
 {% endblock %}

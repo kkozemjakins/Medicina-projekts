@@ -47,6 +47,10 @@ def guest_main():
 def admin_main():
   return render_template("admin_main.html")
 
+@app.route('/admin_main2')
+def admin_main2():
+  return render_template("../templates/admin_main.html")
+
 @app.route('/admin_doctor_page')
 def admin_doctor_page():
   return render_template("admin_doctor_page.html")
@@ -72,10 +76,11 @@ def doctors():
         db.session.commit()
         return redirect('/ok')
       except:
-        return "che delat to"
+        return "Error"
     else:
+      slimnicas = Slimnicas.query.order_by(Slimnicas.id).all()
       tasks = Todo.query.order_by(Todo.date_created).all()
-      return render_template("admin_doctor_page.html", tasks=tasks)
+      return render_template("admin_doctor_page.html", tasks=tasks, slimnicas=slimnicas)
 
 
 @app.route('/delete/<int:id>')
