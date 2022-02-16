@@ -25,13 +25,13 @@
           <th>Darbības</th>
         </tr>
         {% for task in tasks %}
-        <form action="/ok4" method="POST" id="form">
+        <form action="/guest_visits" id="form">
           <tr>
             <td class="dbteksts" id="{{task}}">{{ task.darbjoma }}</td><!-- content = darbibas joma -->
             <td class="dbteksts" id="{{task}}">{{ task.title }}</td><!-- title = vards uzvards -->
             <td class="dbteksts" id="{{task}}">{{ task.article }}</td><!-- article = Darba laiks -->
             <td>
-              <button class="button">Pieteikt vizīti</button>
+              <a href="/guest_visits"><button class="button">Pieteikt vizīti</button></a>
             </td>
           </tr>
         </form>
