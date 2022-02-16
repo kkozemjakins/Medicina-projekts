@@ -21,19 +21,20 @@
 <img id="icon-account"  src="https://cdn.discordapp.com/attachments/552129707227742228/844192853680062474/unknown.png" alt="icon-account" > 
 
     
-<p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding.7em 1.5em;outline: none;"><a href="./login">Iziet</a></p>
+<p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;color: #fff;text-decoration: none;user-select:padding.7em 1.5em;outline: none;"><a href="./login"><button class="button2">Iziet</button></a></p>
 
 <ul id="buttonsPanel3">
   <a href="./admin_main" style="margin-top: 40px; margin-left: 220px;"><button class="button">Atpakaļ</button></a></li>
 
 <div class="content">
-  <h1 style="margin-left: 30px; margin-top: -20px;">Ārsti</h1>
+  <h1 style="margin-left: 100px; margin-top: -20px;">Ārsti</h1>
   {% if tasks|length < 1 %}
   <h4 style="margin-left: 30px; margin-top: 0px;">Šeit nav pievienots ne viens ārsts.</h4>
   {% else %}
 
   <table>
     <tr>
+      <th>Slimnīca</th>
       <th>Darbības joma</th>
       <th>Vārds uzvārds</th>
       <th>Darba laiks</th>
@@ -41,27 +42,37 @@
     </tr>
     {% for task in tasks %}
       <tr>
-        <td>{{ task.content }}</td>
+        <td>
+          {% for task in tasks2 %}
+            {{ task.content }}
+          {% endfor %}
+        </td>
+        <td>{{ task.darbjoma }}</td>
         <td>{{ task.title }}</td>
         <td>{{ task.article }}</td>
         <td>
-          <a href="/delete/{{task.id}}"><button class="button">Delete</button></a>
+          <a href="/delete/{{task.id}}"><button class="button2">Dzēst</button></a>
           <br>
-          <a href="/update/{{task.id}}"><button class="button">Update</button></a>
+          <a href="/update/{{task.id}}"><button class="button">Labot</button></a>
         </td>
       </tr>
     {% endfor %}
   </table>
   {% endif %}
-
-  <form action="/ok" method="POST" id="form">
-        <input class="input" type="text" name="content" id="content" maxlength="30" placeholder="Darbības joma" required>
-        <span></span>
-        <input class="input" type="text" name="title" id="title" maxlength="30" placeholder="Vārds, Uzvārds" required>
-        <input class="input" type="text" name="article" id="article" maxlength="30" placeholder="Darba laiks" required>
-        <input type="submit" value="Pievienot" class="gradient-button">
+ 
+  <form action="/ok" method="POST" id="form" style="margin-left:-20px;">
+    <select name="content" id="content" method="POST" style="margin: 10px;">
+      {% for slimnica in tasks2 %}
+        <option type="text" name="izvele" id="izvele">{{ slimnica.content }}</option>
+      {% endfor %}
+    </select>
+    <input class="input" type="text" name="darbjoma" id="darbjoma" maxlength="30" placeholder="Darbības joma" required>
+    <input class="input" type="text" name="title" id="title" maxlength="30" placeholder="Vārds, Uzvārds" required>
+    <input class="input" type="text" name="article" id="article" maxlength="30" placeholder="Darba laiks" required>
+    <input type="submit" value="Pievienot" class="gradient-button">
   </form>
 </div>
+
 
 <script src="../static/js/admin_doctor_page.js"></script>
     

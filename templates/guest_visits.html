@@ -27,41 +27,16 @@
     <p style="margin-top: -34px;margin-left:260px;z-index:102;font-size:24px;"><a href="./login">Iziet</a></p>
 
     <ul id="buttonsPanel2">
-      <li style="position: relative;
-    size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
-    font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-    margin-bottom: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 200px;
-    float: left;
-    left: 220px;
-    top: 70px;"><a href="./guest_main">Mājaslapa</a></li>
+      <a href="./guest_main"><button class="button-33" role="button">Mājaslapa</button></a>
     
-      <li style="position: relative;
-    size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
-    font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
-    margin-bottom: 5px;
-    text-align: center;
-    list-style-type: none;
-    width: 200px;
-    float: left;
-    left: 220px;
-    top: 70px;"><a href="./guest_visits">Manas vizītes</a></li>
+      <a href="./guest_visits"><button class="button-33" role="button" style="margin-left: 20px;">Manas vizītes</button></a>
     </ul>
 
     <h1>Pieraksti</h1>
-    <h2 id="h2VIZITI">Pievienot vizīti</h2>
-    <div id="ManasVizites">
-      <input type="text" id="datums" placeholder="Datums">
+    <h2 id="h2VIZITI" style="margin-left: 810px;">Pievienot vizīti</h2>
+    <div id="ManasVizites" style="margin-left: 730px;">
+      <input type="date" name="calendar" id="datums" value="2022-02-16"
+      max="2022-10-04" min="2022-02-16">
       <!--<input type="text" id="laiks" placeholder="Laiks">-->
 
       <select type="text" id="laiks" placeholder="Laiks">
@@ -89,6 +64,48 @@
       <button type="Pievienot" id="pievienotViziti">Pievienot</button>
     </div>
     <div id="saraksts">
+    
+      <div class="border2">
+        <!--{% if content == "content" %}
+          <table>
+            <tr>
+              <th>Darbības joma</th>
+              <th>Vārds uzvārds</th>
+              <th>Darba laiks</th>
+            </tr>
+            {% for n in range ( tasks|length ) %}
+              {% if tasks[n].content == "content" %}
+                <tr>
+                  <td class="dbteksts">{{ tasks[n].content }}</td> content = darbibas joma 
+                  <td class="dbteksts">{{ tasks[n].title }}</td> title = vards uzvards 
+                  <td class="dbteksts">{{ tasks[n].article }}</td> article = Darba laiks 
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </table>
+        {% endif %}-->
+        <table>
+          <tr>
+            <th>Darbības joma</th>
+            <th>Vārds uzvārds</th>
+            <th>Darba laiks</th>
+            <th>Darbības</th>
+          </tr>
+          {% for task in tasks2 %}
+          <form action="/ok4" method="POST" id="form">
+            <tr>
+              <td class="dbteksts" id="{{task}}">{{ task.DARBJOMA }}</td><!-- content = darbibas joma -->
+              <td class="dbteksts" id="{{task}}">{{ task.TITLE }}</td><!-- title = vards uzvards -->
+              <td class="dbteksts" id="{{task}}">{{ task.ARTICLE }}</td><!-- article = Darba laiks -->
+              <td>
+              </td>
+            </tr>
+          </form>
+          {% endfor %}
+        </table>
+  
+      </div>
+
     
     </div>
     <script src="static/js/script.js"></script>

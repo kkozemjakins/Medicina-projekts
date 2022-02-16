@@ -35,6 +35,7 @@ h1 {
 
 
 table {
+    margin-top: 20px;
     margin-left: 675px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     text-align: left;
@@ -55,6 +56,7 @@ table {
 }
 
 .gradient-button {
+    margin-left: 675px;
     text-decoration: none;
     display: inline-block;
     color: white;
@@ -87,4 +89,32 @@ table {
 .button:active {
   background: rgb(33,147,90);
   box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+.button2 {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(255, 87, 87);
+  transition: 0.2s;
+} 
+.button2:hover { background: rgb(146, 29, 101); }
+.button2:active {
+  background: rgb(146, 29, 101);
+  box-shadow: 0 3px rgb(146, 29, 101) inset;
+}
+
+input {
+  margin-left: -65px;
+  text-align: center;
+  padding:10px;
+  margin-top:10px;
+  border-radius:10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width:10%;
+  font-family:inherit;
+  font-size: inherit;
+
 }

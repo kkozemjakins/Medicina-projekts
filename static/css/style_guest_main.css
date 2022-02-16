@@ -20,7 +20,7 @@ body {
 #icon-medicina {
     position: relative;
     display: flex;
-    margin-top: -950px;
+    margin-top: -850px;
     margin-left: 1515px;
     width: 150px; 
     height: 141px;
@@ -28,42 +28,98 @@ body {
 #icon-account {
     position: relative;
     display: flex;
-    margin-top: -140px;
+    margin-top: -130px;
     margin-left: 140px;
     width: 110px; 
     height: 110px;
 }
-#search {
-    text-align: center;
-    position: relative;
-    width: 1247px;
-    height: 50px;
-    top: -750px;
-    left: 250px;
-    font-size: 20px;
-}
-#pogaFiltr{
-    position: relative;
-    display: flex;
-    width: 53px;
-    height: 50px; 
-    top: 60px;
-    left: 1497px;
-    font-size: 40px;
-}
+
 li {
     position: relative;
     size: 30px;
-    background: linear-gradient(to left, #89ffbe 0%, white, #89ffbe);
-    border-bottom: 1px solid grey;
-    color: #506a6b;
     font-size: 20px;
-    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
     margin-bottom: 5px;
     text-align: center;
     list-style-type: none;
     width: 200px;
     float: left;
     left: 220px;
-    top: -60px;
+    top: -100px;
+}
+
+  table {
+    margin-top: -100px;
+    margin-left: 300px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #ECE9E0;
+    color: #656665;
+    border: 16px solid #ECE9E0;
+    border-radius: 20px;
+    }
+    th {
+    font-size: 18px;
+    padding: 10px;
+    }
+    td {
+    background: #F5D7BF;
+    padding: 10px;
+}
+
+.button2 {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(255, 87, 87);
+    transition: 0.2s;
+  } 
+  .button2:hover { background: rgb(146, 29, 101); }
+  .button2:active {
+    background: rgb(146, 29, 101);
+    box-shadow: 0 3px rgb(146, 29, 101) inset;
+  }
+
+  .button {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+  } 
+  .button:hover { background: rgb(53, 167, 110); }
+  .button:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+  }
+
+/* buttons on panel */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h1>Medicīna</h1>
+    <h1 style="margin-left: 900px;">Medicīna</h1>
     <link rel="stylesheet" href="static/css/style_guest_main.css"></link>
     <style type="text/css">
       BODY {
@@ -16,24 +16,30 @@
     <div class="border"> </div>
 
 
-    <form name="form1" id="form1" action="/action_page.php">
-      rajonss: <select name="rajons" id="rajons">
-        <option value="" selected="selected">Select rajons</option>
-      </select>
-      <br><br>
-      slimnicas: <select name="slimnica" id="slimnica">
-        <option value="" selected="selected">Please select rajons first</option>
-      </select>
-      <br><br>
-      arstss: <select name="arsts" id="arsts">
-        <option value="" selected="selected">Please select slimnica first</option>
-      </select>
-      <br><br>
-      <input type="submit" value="Submit">
-    </form> 
+    <div class="border2">
+      <table>
+        <tr>
+          <th>Darbības joma</th>
+          <th>Vārds uzvārds</th>
+          <th>Darba laiks</th>
+          <th>Darbības</th>
+        </tr>
+        {% for task in tasks %}
+        <form action="/ok4" method="POST" id="form">
+          <tr>
+            <td class="dbteksts" id="{{task}}">{{ task.darbjoma }}</td><!-- content = darbibas joma -->
+            <td class="dbteksts" id="{{task}}">{{ task.title }}</td><!-- title = vards uzvards -->
+            <td class="dbteksts" id="{{task}}">{{ task.article }}</td><!-- article = Darba laiks -->
+            <td>
+              <button class="button">Pieteikt vizīti</button>
+            </td>
+          </tr>
+        </form>
+        {% endfor %}
+      </table>
+      
 
-
-    <div class="border2"> </div>
+    </div>
 
     <div style="height:600px;width:1500px;overflow-y:scroll;margin-top: -625px;">
 
@@ -41,14 +47,37 @@
     <img id="icon-medicina" src="https://cdn.discordapp.com/attachments/552129707227742228/844192612482416710/unknown.png" alt="icon-medicina" >
     <img id="icon-account"  src="https://cdn.discordapp.com/attachments/552129707227742228/844192853680062474/unknown.png" alt="icon-account" >
 
-    <p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;"><a href="./login">Iziet</a></p>
-    <button id="pogaFiltr">▼</button>  
-    <ul id="buttonsPanel">
-      <li><a href="./guest_main">Mājaslapa</a></li>
-      <li><a href="./guest_visits">Manas vizītes</a></li>
+    <p style="margin-top: -51px;margin-left:260px;z-index:102;font-size:24px;"><a href="./login"><button class="button2">Iziet</button></a></p>
+    <ul id="buttonsPanel" style="margin-top: 150px;">
+      <li><a href="./guest_main"><button class="button-33" role="button">Mājaslapa</button></a></li>
+      <li><a href="./guest_visits"><button class="button-33" role="button" style="margin-left: -60px;">Manas vizītes</button></a></li>
     </ul>
     <script src="static/js/script_guest_main.js"></script>
 
+    <form action="/ok4" method="POST" id="form">
+      <select type="text" id="laiks" placeholder="Laiks" style="margin-top: -10px; margin-left: 750px;">
+        <option value="10:00">10:00</option>
+        <option value="10:30">10:30</option>
+        <option value="11:00">11:00</option>
+        <option value="11:30">11:30</option>
+        <option value="12:00">12:00</option>
+        <option value="12:30">12:30</option>
+        <option value="13:00">13:00</option>
+        <option value="13:30">13:30</option>
+        <option value="14:00">14:00</option>
+        <option value="14:30">14:30</option>
+        <option value="15:00">15:00</option>
+        <option value="15:30">15:30</option>
+        <option value="16:00">16:00</option>
+        <option value="16:30">16:30</option>
+        <option value="17:00">17:00</option>
+        <option value="17:30">17:30</option>
+        <option value="18:00">18:00</option>
+        <option value="18:30">18:30</option>
+        <option value="19:00">19:00</option>
+      </select>
+      <input type="date" name="calendar" value="2022-02-16"
+      max="2022-10-04" min="2022-02-16">
+    </form>
 
 </body>
-</html>

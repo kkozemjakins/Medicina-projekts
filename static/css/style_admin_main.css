@@ -54,6 +54,8 @@ h1 {
 }
 
 .button_statistika{
+    margin-left: 634px;
+    margin-top: 70px;
     font-size: 30px;
     height: 130px;
     width: 500px;
@@ -72,3 +74,18 @@ h1 {
     box-shadow: 0 3px rgb(33,147,90) inset;
 
 }
+
+.button2 {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(255, 87, 87);
+    transition: 0.2s;
+  } 
+  .button2:hover { background: rgb(146, 29, 101); }
+  .button2:active {
+    background: rgb(146, 29, 101);
+    box-shadow: 0 3px rgb(146, 29, 101) inset;
+  }

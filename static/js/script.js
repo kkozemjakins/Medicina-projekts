@@ -33,7 +33,7 @@ function render() {
 
         let vizite = `
     <li class="vizite">
-        <h3>Vizīte: ${vizites[i].datums}</h3>⠀⠀⠀<h4>Laiks: ${vizites[i].laiks}</h4>⠀⠀⠀⠀
+        <h3>Datums: ${vizites[i].datums}</h3>⠀⠀⠀<h4>Laiks: ${vizites[i].laiks}</h4>⠀⠀⠀⠀
         <button class="del">Dzēst</button>
     </li>`;
     saraksts.innerHTML += vizite;

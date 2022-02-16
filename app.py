@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(20), nullable=False)
+    darbjoma = db.Column(db.String(20), nullable=False)
     title = db.Column(db.String(20), nullable=False)
     article = db.Column(db.String(20), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
@@ -20,12 +20,30 @@ class Todo(db.Model):
 
 class Slimnicas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nosaukums = db.Column(db.String(20), nullable=False)
+    content = db.Column(db.String(200), nullable=False)
     adrese = db.Column(db.String(30), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return 'Slimnicas %r' % self.id
+
+class Izvele(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    izvele = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return 'Izvele %r' % self.id
+
+class Vizit(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    DARBJOMA = db.Column(db.String(200), nullable=False)
+    TITLE = db.Column(db.String(200), nullable=False)
+    ARTICLE = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return 'Izvele %r' % self.id
+
 
 @app.route('/')
 def sakum_login():
@@ -37,27 +55,23 @@ def login():
 
 @app.route('/guest_visits')
 def guest_visits():
-  return render_template("guest_visits.html")
+  return render_template("guest_visits.html", tasks2=Vizit.query.all())
 
 @app.route('/guest_main')
 def guest_main():
-  return render_template("guest_main.html")
+  return render_template("guest_main.html",  tasks=Todo.query.all(), tasks2=Vizit.query.all())
 
 @app.route('/admin_main')
 def admin_main():
   return render_template("admin_main.html")
 
-@app.route('/admin_main2')
-def admin_main2():
-  return render_template("../templates/admin_main.html")
-
 @app.route('/admin_doctor_page')
 def admin_doctor_page():
-  return render_template("admin_doctor_page.html")
+  return render_template("admin_doctor_page.html", tasks=Todo.query.all(), tasks2=Slimnicas.query.all())
 
 @app.route('/admin_hospital_page')
 def admin_hospital_page():
-  return render_template("admin_hospital_page.html")
+  return render_template("admin_hospital_page.html", tasks2=Slimnicas.query.all(), tasks=Todo.query.all())
 
 @app.route('/admin_statistika')
 def admin_statistika():
@@ -68,8 +82,7 @@ def admin_statistika():
 @app.route('/ok', methods=['POST', 'GET'])
 def doctors():
     if request.method == 'POST':
-
-      new_task = Todo(content=request.form['content'], title=request.form['title'], article=request.form['article'])
+      new_task = Todo(darbjoma=request.form['darbjoma'], title=request.form['title'], article=request.form['article'])
 
       try:
         db.session.add(new_task)
@@ -80,7 +93,7 @@ def doctors():
     else:
       slimnicas = Slimnicas.query.order_by(Slimnicas.id).all()
       tasks = Todo.query.order_by(Todo.date_created).all()
-      return render_template("admin_doctor_page.html", tasks=tasks, slimnicas=slimnicas)
+      return render_template("admin_doctor_page.html", tasks=tasks, slimnicas=slimnicas, tasks2=Slimnicas.query.all())
 
 
 @app.route('/delete/<int:id>')
@@ -99,7 +112,7 @@ def update(id):
     task = Todo.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.content = request.form['content']
+        task.darbjoma = request.form['darbjoma']
         task.title = request.form['title']
         task.article = request.form['article']
 
@@ -117,7 +130,7 @@ def update(id):
 def slimnicas():
     if request.method == 'POST':
 
-      new_slimnica = Slimnicas(nosaukums=request.form['nosaukums'], adrese=request.form['adrese'])
+      new_slimnica = Slimnicas(content=request.form['content'], adrese=request.form['adrese'])
 
       try:
         db.session.add(new_slimnica)
@@ -146,7 +159,7 @@ def update2(id):
     task = Slimnicas.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.nosaukums = request.form['nosaukums']
+        task.content = request.form['content']
         task.adrese = request.form['adrese']
 
         try:
@@ -157,6 +170,61 @@ def update2(id):
 
     else:
         return render_template('update_hospital_page.html', task=task)
+
+#Vizit
+@app.route('/ok4', methods=['POST', 'GET'])
+def vizites():
+    if request.method == 'POST':
+      Vizit.DARBJOMA = Todo.darbjoma
+      Vizit.TITLE = Todo.title
+      Vizit.ARTICLE = Todo.article
+
+      new_vizit = Vizit(DARBJOMA=request.form['DARBJOMA'], TITLE=request.form['TITLE'], ARTICLE=request.form['ARTICLE'])
+
+      try:
+        db.session.add(new_vizit)
+        db.session.commit()
+        return redirect('/ok4')
+      except:
+        return "Error"
+    else:
+      tasks2 = Vizit.query.order_by(Vizit.date_created).all()
+      return render_template("guest_main.html", tasks2=tasks2)
+
+@app.route('/ok4', methods=['GET', 'POST'])
+def clone(id):
+    task = Vizit.query.get_or_404(id)
+
+    if request.method == 'POST':
+        task.DARBJOMA = request.form['DARBJOMA ']
+        task.TITLE = request.form['TITLE']
+        task.ARTICLE = request.form['ARTICLE']
+
+        try:
+            db.session.commit()
+            return redirect('/ok4')
+        except:
+            return 'There was an issue updating your task'
+
+    else:
+        return render_template('guest_visits.html', task=task)
+
+# Izvele
+@app.route('/ok3', methods=['POST', 'GET'])
+def izveles():
+    if request.method == 'POST':
+
+      new_izvele = Izvele(izvele=request.form['izvele'])
+
+      try:
+        db.session.add(new_izvele)
+        db.session.commit()
+        return redirect('/ok3')
+      except:
+        return "Error"
+    else:
+      tasks3 = Izvele.query.order_by(Izvele.date_created).all()
+      return render_template("admin_doctor_page.html", tasks3=tasks3)
 
 
 if __name__ == "__main__": 
