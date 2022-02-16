@@ -1,4 +1,4 @@
-# Projekts-Medicīna
+# Projekts Medicīna
 
 ### Grupa:
 DP2-1
