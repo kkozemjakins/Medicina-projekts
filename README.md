@@ -1,4 +1,4 @@
-# Projekts-Medicīna-DP11-3Grupa
+# Projekts-Medicīna
 
 ### Grupa:
 DP2-1
