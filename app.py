@@ -26,7 +26,7 @@ class Slimnicas(db.Model):
 
     def __repr__(self):
         return 'Slimnicas %r' % self.id
-
+'''
 class Izvele(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     izvele = db.Column(db.String(200), nullable=False)
@@ -44,7 +44,7 @@ class Vizit(db.Model):
     def __repr__(self):
         return 'Izvele %r' % self.id
 
-
+'''
 @app.route('/')
 def sakum_login():
   return render_template("login.html")
@@ -170,7 +170,7 @@ def update2(id):
 
     else:
         return render_template('update_hospital_page.html', task=task)
-
+'''
 #Vizit
 @app.route('/ok4', methods=['POST', 'GET'])
 def vizites():
@@ -225,7 +225,7 @@ def izveles():
     else:
       tasks3 = Izvele.query.order_by(Izvele.date_created).all()
       return render_template("admin_doctor_page.html", tasks3=tasks3)
-
+'''
 
 if __name__ == "__main__": 
   app.run(host='0.0.0.0', port=8080)
