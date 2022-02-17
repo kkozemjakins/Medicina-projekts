@@ -27,7 +27,7 @@ function render() {
             <h3>Datums: ${vizites[i].datums}</h3>
             <h3>Laiks: ${vizites[i].laiks}</h3>
             <button class="del" onclick='removeViziti("${vizites[i].datums}")'>Dzēst</button>
-            <a href="/lapa_priekš_drukāšanai"><button class="del" >Drūkat</button></a>
+            <a href="/lapa_priekš_drukāšanai"><button class="dru" >Drūkat</button></a>
         </div>`;
 
         saraksts.innerHTML += vizite;

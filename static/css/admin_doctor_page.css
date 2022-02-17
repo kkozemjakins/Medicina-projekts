@@ -140,7 +140,7 @@ table {
   .button2:active {
     background: rgb(146, 29, 101);
     box-shadow: 0 3px rgb(146, 29, 101) inset;
-  }
+}
 
 input {
   margin-left: -65px;
