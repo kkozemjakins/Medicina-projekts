@@ -1,5 +1,7 @@
 let vizites = []
 
+n = 0;
+
 window.addEventListener('load', () => {
     vizites = JSON.parse(localStorage.getItem("vizites") || "[]");
     console.log(vizites)
@@ -22,12 +24,14 @@ function render() {
     saraksts.innerHTML = "";
 
     for(let i = 0; i < vizites.length; i++) {
+        let datums = vizites[i].datums
+        let laiks = vizites[i].laiks
         let vizite = `
         <div class="vizite">
-            <h3>Datums: ${vizites[i].datums}</h3>
-            <h3>Laiks: ${vizites[i].laiks}</h3>
-            <button class="del" onclick='removeViziti("${vizites[i].datums}")'>Dzēst</button>
-            <a href="/lapa_priekš_drukāšanai"><button class="dru" >Drūkat</button></a>
+            <h3>Datums: ${datums}</h3>
+            <h3>Laiks: ${laiks}</h3>
+            <button class="del" onclick='removeViziti("${datums}")'>Dzēst</button>
+            <a href="/lapa_priekš_drukāšanai"><button class="dru" onclick='drukat("${datums}","${laiks}")'>Drūkat</button></a>
         </div>`;
 
         saraksts.innerHTML += vizite;
@@ -49,4 +53,17 @@ function removeViziti(vizite){
 
     localStorage.setItem("vizites", JSON.stringify(vizites))
     render();
+
+    
+}
+
+
+
+function drukat(datums, laiks){
+    StorageDatums = window.localStorage;
+
+    localStorage.setItem("datums", datums);
+        
+    localStorage.setItem("laiks", laiks);
+    
 }
