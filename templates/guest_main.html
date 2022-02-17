@@ -31,7 +31,9 @@
             <td class="dbteksts" id="{{task}}">{{ task.title }}</td><!-- title = vards uzvards -->
             <td class="dbteksts" id="{{task}}">{{ task.article }}</td><!-- article = Darba laiks -->
             <td>
-              <a href="/guest_visits"><button class="button">Pieteikt vizīti</button></a>
+              <form action="/ok4" method="POST" id="form">
+                <a href="/guest_visits"><button type="submit" class="button">Pieteikt vizīti</button></a>
+              </form>
             </td>
           </tr>
         </form>

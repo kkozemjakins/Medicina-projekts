@@ -35,6 +35,7 @@ class Izvele(db.Model):
         return 'Izvele %r' % self.id
 
 class Vizit(db.Model):
+
     id = db.Column(db.Integer, primary_key=True)
     DARBJOMA = db.Column(db.String(200), nullable=False)
     TITLE = db.Column(db.String(200), nullable=False)
@@ -76,6 +77,10 @@ def admin_hospital_page():
 @app.route('/admin_statistika')
 def admin_statistika():
   return render_template("admin_statistika.html")
+
+@app.route('/lapa_priekš_drukāšanai')
+def lapa_priekš_drukāšanai():
+  return render_template("lapa_priekš_drukāšanai.html")
 
 
 # Doctor page
@@ -175,11 +180,9 @@ def update2(id):
 @app.route('/ok4', methods=['POST', 'GET'])
 def vizites():
     if request.method == 'POST':
-      Vizit.DARBJOMA = Todo.darbjoma
-      Vizit.TITLE = Todo.title
-      Vizit.ARTICLE = Todo.article
+      get = Todo()
 
-      new_vizit = Vizit(DARBJOMA=request.form['DARBJOMA'], TITLE=request.form['TITLE'], ARTICLE=request.form['ARTICLE'])
+      new_vizit = Vizit(DARBJOMA=get.darbjoma, TITLE=get.title, ARTICLE=get.article)
 
       try:
         db.session.add(new_vizit)
@@ -191,23 +194,6 @@ def vizites():
       tasks2 = Vizit.query.order_by(Vizit.date_created).all()
       return render_template("guest_main.html", tasks2=tasks2)
 
-@app.route('/ok4', methods=['GET', 'POST'])
-def clone(id):
-    task = Vizit.query.get_or_404(id)
-
-    if request.method == 'POST':
-        task.DARBJOMA = request.form['DARBJOMA ']
-        task.TITLE = request.form['TITLE']
-        task.ARTICLE = request.form['ARTICLE']
-
-        try:
-            db.session.commit()
-            return redirect('/ok4')
-        except:
-            return 'There was an issue updating your task'
-
-    else:
-        return render_template('guest_visits.html', task=task)
 
 # Izvele
 @app.route('/ok3', methods=['POST', 'GET'])
