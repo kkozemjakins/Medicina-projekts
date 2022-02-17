@@ -27,9 +27,9 @@
 
 
   <form action="/update/{{task.id}}" method="POST" style="margin-left: 20px;">
-    <input type="text" name="darbjoma" id="darbjoma" value="{{task.darbjoma}}" placeholder="Darbības joma">
-    <input type="text" name="title" id="title" value="{{task.title}}" placeholder="Vārds, Uzvārds">
-    <input type="text" name="article" id="article" value="{{task.article}}" placeholder="Darba laiks">
+    <input type="text" name="darbjoma" id="darbjoma" value="{{task.darbjoma}}" placeholder="Darbības joma" required>
+    <input type="text" name="title" id="title" value="{{task.title}}" placeholder="Vārds, Uzvārds" required>
+    <input type="text" name="article" id="article" value="{{task.article}}" placeholder="Darba laiks" required>
     <input type="submit" value="Ieviest izmaiņas" class="button" style="margin-left: -55px;">
   </form>
 </div>

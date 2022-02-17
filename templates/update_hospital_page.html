@@ -26,8 +26,8 @@
 
 
   <form action="/update2/{{task.id}}" method="POST">
-    <input type="text" name="content" id="content" value="{{task.content}}" placeholder="Nosaukums" style="margin-left: 650px;">
-    <input type="text" name="adrese" id="adrese" value="{{task.adrese}}" placeholder="Adrese" style="margin-left: 10px;">
+    <input type="text" name="content" id="content" value="{{task.content}}" placeholder="Nosaukums" style="margin-left: 650px;" required>
+    <input type="text" name="adrese" id="adrese" value="{{task.adrese}}" placeholder="Adrese" style="margin-left: 10px;" required>
     <input type="submit" value="Ieviest izmaiņas" class="button" style="margin-left: 10px;">
   </form>
 </div>
