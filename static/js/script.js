@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     render();
 });
 
-document.getElementById('pievienotVizite').addEventListener('click', () => {
+document.getElementById('pievienotViziti').addEventListener('click', () => {
     let vizite = {datums: datums.value, laiks: laiks.value};
 
     datums.value = "";
@@ -27,6 +27,7 @@ function render() {
             <h3>Datums: ${vizites[i].datums}</h3>
             <h3>Laiks: ${vizites[i].laiks}</h3>
             <button class="del" onclick='removeViziti("${vizites[i].datums}")'>Dzēst</button>
+            <a href="/lapa_priekš_drukāšanai"><button class="del" >Drūkat</button></a>
         </div>`;
 
         saraksts.innerHTML += vizite;

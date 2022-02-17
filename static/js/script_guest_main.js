@@ -7,9 +7,7 @@ var subjectObject = {
   },
 }
 
-var getValue = document.getElementById('test_medicina').selectedOptions[0].value;
 
-alert ("Danik idi nahuj ok!!??"); // This will output the value selected.
 
 /* window.onload = function() {
   var subjectSel = document.getElementById("rajons");

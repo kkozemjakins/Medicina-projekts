@@ -77,6 +77,10 @@ def admin_hospital_page():
 def admin_statistika():
   return render_template("admin_statistika.html")
 
+@app.route('/lapa_priekš_drukāšanai')
+def lapa_priekš_drukāšanai():
+  return render_template("lapa_priekš_drukāšanai.html")
+
 
 # Doctor page
 @app.route('/ok', methods=['POST', 'GET'])
