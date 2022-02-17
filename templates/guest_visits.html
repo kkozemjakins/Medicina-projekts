@@ -36,10 +36,10 @@
     <h2 id="h2VIZITI" style="margin-left: 810px;">Pievienot vizīti</h2>
     <div id="ManasVizites" style="margin-left: 730px;">
       <input type="date" name="calendar" id="datums" value="2022-02-16"
-      max="2022-10-04" min="2022-02-16">
+      max="2022-10-04" min="2022-02-16" required>
       <!--<input type="text" id="laiks" placeholder="Laiks">-->
 
-      <select type="text" id="laiks" placeholder="Laiks">
+      <select type="text" id="laiks" placeholder="Laiks" required>
         <option value="10:00">10:00</option>
         <option value="10:30">10:30</option>
         <option value="11:00">11:00</option>
@@ -65,7 +65,7 @@
     </div>
     <div id="saraksts">
     
-      <div class="border2">
+      <div class="border2" id="border2">
         <!--{% if content == "content" %}
           <table>
             <tr>
@@ -84,25 +84,7 @@
             {% endfor %}
           </table>
         {% endif %}-->
-        <table>
-          <tr>
-            <th>Darbības joma</th>
-            <th>Vārds uzvārds</th>
-            <th>Darba laiks</th>
-            <th>Darbības</th>
-          </tr>
-          {% for task in tasks2 %}
-          <form action="/ok4" method="POST" id="form">
-            <tr>
-              <td class="dbteksts" id="{{task}}">{{ task.DARBJOMA }}</td><!-- content = darbibas joma -->
-              <td class="dbteksts" id="{{task}}">{{ task.TITLE }}</td><!-- title = vards uzvards -->
-              <td class="dbteksts" id="{{task}}">{{ task.ARTICLE }}</td><!-- article = Darba laiks -->
-              <td>
-              </td>
-            </tr>
-          </form>
-          {% endfor %}
-        </table>
+
   
       </div>
 
