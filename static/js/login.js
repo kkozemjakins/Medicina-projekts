@@ -74,7 +74,7 @@ function registracija(){
 
         render();
 
-        window.location = "/login";
+        window.location = "/";
     }
 
     username.value = "";
