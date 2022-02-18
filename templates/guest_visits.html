@@ -23,9 +23,9 @@
     </div>
     <img id="icon-medicina" src="https://cdn.discordapp.com/attachments/552129707227742228/844192612482416710/unknown.png" alt="icon-medicina" >
     <img id="icon-account"  src="https://cdn.discordapp.com/attachments/552129707227742228/844192853680062474/unknown.png" alt="icon-account" > 
-    <p style="margin-top: -15px;margin-left:260px;z-index:102;font-size:24px;"><a id = "username_lapā"></a></p>
+    <p id = "username_lapā" style="margin-top: -65px;margin-left:260px;font-size:24px;"></p>
 
-    <p style="margin-top: -45px;margin-left:260px;z-index:102;font-size:24px;"><a href="./login">Iziet</a></p>
+    <p style="margin-top: -18px;margin-left:260px;z-index:102;font-size:24px;"><a href="./login"><button class="button2">Iziet</button></a></p>
 
     <ul id="buttonsPanel2">
       <a href="./guest_main"><button class="button-33" role="button">Mājaslapa</button></a>
@@ -93,27 +93,6 @@
     </div>
 
     <div>
-      {% if tasks3|length < 1 %}
-      <h4 style="margin-left: 720px; margin-top: 0px;">Šeit nav pievienota ne viena vizīte.</h4>
-      {% else %}
-      <table>
-        <tr>
-          <th>Darbības joma</th>
-          <th>Vārds Uzvārds</th>
-          <th>Darbības</th>
-        </tr>
-        {% for task in tasks3 %}
-          <tr>
-            <td>{{ task.DARBJOMA }}</td>
-            <td>{{ task.TITLE }}</td>
-            <td>
-              {{ task.ARTICLE }}
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
-      {% endif %}
-    </div>
 
     <script src="static/js/script.js"></script>
 

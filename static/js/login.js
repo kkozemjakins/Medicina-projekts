@@ -21,7 +21,8 @@ document.getElementById('buttonREG').addEventListener('click', () => {
     <p><input id="username" class="input" type="text"  maxlength="30" placeholder="Vārds Uzvārds" required></p>
     <p><input id="password" class="input" type="text" maxlength="30" placeholder="Parole" required></p>
     <p><input id="passwordADD" class="input" type="text" maxlength="30" placeholder="Apstipriniet paroli" required></p>
-    <p><button class="button" id="Registracija" onclick="registracija()" style="font-size: 40px;margin-top: 20%;height: 73px;width: 500px;">Reģistrācija</button></p>`;
+    <p><button class="button" id="Registracija" onclick="registracija()" style="font-size: 40px;margin-top: 20%;height: 73px;width: 500px;">Reģistrācija</button></p>
+    <p><a href="/"><button class="atpakaļ">Atpakaļ</button></a></p>`;
 
 })
 
@@ -33,7 +34,8 @@ document.getElementById('buttonLOGIN').addEventListener('click', () => {
     let vards = document.getElementById("login_div").innerHTML = `      
     <p><input id="username" class="input" type="text"  maxlength="30" placeholder="Vārds Uzvārds" required></p>
     <p><input id="password" class="input" type="text" maxlength="30" placeholder="Parole" required></p>
-    <p><button class="button" id="Login" onclick="Login()" style="font-size: 40px;margin-top: 20%;height: 73px;width: 500px;">Login</button></p>`;
+    <p><button class="button" id="Login" onclick="Login()" style="font-size: 40px;margin-top: 20%;height: 73px;width: 500px;">Login</button></p>
+    <p><a href="/"><button class="atpakaļ">Atpakaļ</button></a></p>`;
 
 })
 
