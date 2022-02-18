@@ -48,12 +48,12 @@ function Login(){
         console.log(login_pass)
         
 
-        if(login_name == user_data[i].username && login_pass == user_data[i].password){
+        if(login_name === user_data[i].username && login_pass == user_data[i].password){
 
             window.location = "/guest_main";
         }
 
-        if(login_name == "admin" && login_pass == "admin"){
+        if(login_name === "admin" && login_pass == "admin"){
 
             window.location = "/admin_main";
         }
@@ -69,7 +69,7 @@ function Login(){
 function registracija(){
     let data = {username: username.value, password: password.value};
 
-    if(password.value === passwordADD.value){
+    if(password.value === passwordADD.value && password.value != ""){
         user_data.push(data);
 
         render();
