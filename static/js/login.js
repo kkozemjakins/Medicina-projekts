@@ -51,6 +51,7 @@ function Login(){
         if(login_name === user_data[i].username && login_pass == user_data[i].password){
 
             window.location = "/guest_main";
+            let current_user_name = localStorage.setItem("Current User Name", login_name)
         }
 
         if(login_name === "admin" && login_pass == "admin"){
