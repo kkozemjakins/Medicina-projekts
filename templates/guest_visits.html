@@ -90,6 +90,30 @@
 
     
     </div>
+
+    <div>
+      {% if tasks3|length < 1 %}
+      <h4 style="margin-left: 720px; margin-top: 0px;">Šeit nav pievienota ne viena vizīte.</h4>
+      {% else %}
+      <table>
+        <tr>
+          <th>Darbības joma</th>
+          <th>Vārds Uzvārds</th>
+          <th>Darbības</th>
+        </tr>
+        {% for task in tasks3 %}
+          <tr>
+            <td>{{ task.DARBJOMA }}</td>
+            <td>{{ task.TITLE }}</td>
+            <td>
+              {{ task.ARTICLE }}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+    </div>
+
     <script src="static/js/script.js"></script>
 
 </body>

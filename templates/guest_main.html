@@ -32,14 +32,13 @@
             <td class="dbteksts" id="{{task}}">{{ task.article }}</td><!-- article = Darba laiks -->
             <td>
               <form action="/ok4" method="POST" id="form">
-                <a href="/guest_visits"><button type="submit" class="button">Pieteikt vizīti</button></a>
+                <input type="submit" class="button" href="/guest_visits" value="Pieteikt vizīti"></input>
               </form>
             </td>
           </tr>
         </form>
         {% endfor %}
-      </table>
-      
+      </table>     
 
     </div>
 

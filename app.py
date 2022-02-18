@@ -27,20 +27,18 @@ class Slimnicas(db.Model):
     def __repr__(self):
         return 'Slimnicas %r' % self.id
 
-class Izvele(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    izvele = db.Column(db.String(200), nullable=False)
-
-    def __repr__(self):
-        return 'Izvele %r' % self.id
-
 class Vizit(db.Model):
+    get = Todo()
 
     id = db.Column(db.Integer, primary_key=True)
-    DARBJOMA = db.Column(db.String(200), nullable=False)
-    TITLE = db.Column(db.String(200), nullable=False)
-    ARTICLE = db.Column(db.String(200), nullable=False)
+    DARBJOMA = db.Column(db.String(20), nullable=False)
+    TITLE = db.Column(db.String(20), nullable=False)
+    ARTICLE = db.Column(db.String(20), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    ARTICLE = get.article
+    TITLE = get.title
+    DARBJOMA = get.darbjoma
 
     def __repr__(self):
         return 'Izvele %r' % self.id
@@ -56,11 +54,11 @@ def login():
 
 @app.route('/guest_visits')
 def guest_visits():
-  return render_template("guest_visits.html", tasks2=Vizit.query.all())
+  return render_template("guest_visits.html", tasks3=Vizit.query.all())
 
 @app.route('/guest_main')
 def guest_main():
-  return render_template("guest_main.html",  tasks=Todo.query.all(), tasks2=Vizit.query.all())
+  return render_template("guest_main.html",  tasks=Todo.query.all(), tasks3=Vizit.query.all())
 
 @app.route('/admin_main')
 def admin_main():
@@ -182,7 +180,7 @@ def vizites():
     if request.method == 'POST':
       get = Todo()
 
-      new_vizit = Vizit(DARBJOMA=get.darbjoma, TITLE=get.title, ARTICLE=get.article)
+      new_vizit = Vizit(DARBJOMA=request.form['DARBJOMA'], TITLE=request.form['TITLE'], ARTICLE=request.form['ARTICLE'])
 
       try:
         db.session.add(new_vizit)
@@ -191,26 +189,8 @@ def vizites():
       except:
         return "Error"
     else:
-      tasks2 = Vizit.query.order_by(Vizit.date_created).all()
-      return render_template("guest_main.html", tasks2=tasks2)
-
-
-# Izvele
-@app.route('/ok3', methods=['POST', 'GET'])
-def izveles():
-    if request.method == 'POST':
-
-      new_izvele = Izvele(izvele=request.form['izvele'])
-
-      try:
-        db.session.add(new_izvele)
-        db.session.commit()
-        return redirect('/ok3')
-      except:
-        return "Error"
-    else:
-      tasks3 = Izvele.query.order_by(Izvele.date_created).all()
-      return render_template("admin_doctor_page.html", tasks3=tasks3)
+      tasks3 = Vizit.query.order_by(Vizit.date_created).all()
+      return render_template("guest_main.html", tasks3=tasks3)
 
 
 if __name__ == "__main__": 

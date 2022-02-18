@@ -63,7 +63,7 @@
   <form action="/ok" method="POST" id="form" style="margin-left:-20px;">
     <select name="content" id="content" method="POST" style="margin: 10px;">
       {% for slimnica in tasks2 %}
-        <option type="text" name="izvele" id="izvele">{{ slimnica.content }}</option>
+        <option type="submit" name="izvele" id="izvele">{{ slimnica.content }}</option>
       {% endfor %}
     </select>
     <input class="input" type="text" name="darbjoma" id="darbjoma" maxlength="30" placeholder="Darbības joma" required>
