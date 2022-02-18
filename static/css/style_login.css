@@ -19,7 +19,7 @@ body {
 };
 
 .button {
-    
+    display: none;
     -webkit-transition-duration: 1s;
     transition-duration: 1s;
 }

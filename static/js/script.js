@@ -1,7 +1,5 @@
 let vizites = []
 
-n = 0;
-
 window.addEventListener('load', () => {
     vizites = JSON.parse(localStorage.getItem("vizites") || "[]");
     console.log(vizites)
