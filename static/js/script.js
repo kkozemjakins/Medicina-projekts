@@ -1,5 +1,10 @@
 let vizites = []
 
+current_user_name = localStorage.getItem('Current User Name');
+
+document.getElementById("username_lapā").innerHTML = current_user_name;
+
+
 window.addEventListener('load', () => {
     vizites = JSON.parse(localStorage.getItem("vizites") || "[]");
     console.log(vizites)
